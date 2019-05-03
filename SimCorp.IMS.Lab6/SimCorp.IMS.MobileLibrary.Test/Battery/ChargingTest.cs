@@ -30,12 +30,17 @@ namespace MobileLibrary.Test {
             Charge.Charge = 10;
             int act_charge = 0;
             bool hit = false;
-            Charge.SubscribeOnCharge((obj, charge) => { act_charge = charge; hit = true; });
+            Charge.SubscribeOnCharge((obj, charge) => {
+                if (!hit) {
+                    act_charge = charge;
+                    hit = true;
+                }
+            });
 
             Charge.StartCharging();
 
             while (!hit)
-                Task.Delay(5).Wait();
+                Task.Delay(1).Wait();
             Assert.AreEqual(11, act_charge);
         }
 
@@ -45,12 +50,17 @@ namespace MobileLibrary.Test {
             Charge.Charge = 10;
             int act_charge = 0;
             bool hit = false;
-            Charge.SubscribeOnCharge((obj, charge) => { act_charge = charge; hit = true; });
+            Charge.SubscribeOnCharge((obj, charge) => {
+                if (!hit) {
+                    act_charge = charge;
+                    hit = true;
+                }
+            });
 
             Charge.StopCharging();
 
             while (!hit)
-                Task.Delay(5).Wait();
+                Task.Delay(1).Wait();
 
             Assert.AreEqual(9, act_charge);
         }
@@ -61,12 +71,17 @@ namespace MobileLibrary.Test {
             Charge.Charge = 10;
             int act_charge = 0;
             bool hit = false;
-            Charge.SubscribeOnCharge((obj, charge) => { act_charge = charge; hit = true; });
+            Charge.SubscribeOnCharge((obj, charge) => {
+                if (!hit) {
+                    act_charge = charge;
+                    hit = true;
+                }
+            });
 
             Charge.StartCharging();
 
             while (!hit)
-                Task.Delay(5).Wait();
+                Task.Delay(1).Wait();
             Assert.AreEqual(11, act_charge);
         }
 
@@ -76,12 +91,17 @@ namespace MobileLibrary.Test {
             Charge.Charge = 10;
             int act_charge = 0;
             bool hit = false;
-            Charge.SubscribeOnCharge((obj, charge) => { act_charge = charge; hit = true; });
+            Charge.SubscribeOnCharge((obj, charge) => {
+                if (!hit) {
+                    act_charge = charge;
+                    hit = true;
+                }
+            });
 
             Charge.StopCharging();
 
             while (!hit)
-                Task.Delay(5).Wait();
+                Task.Delay(1).Wait();
 
             Assert.AreEqual(9, act_charge);
         }
