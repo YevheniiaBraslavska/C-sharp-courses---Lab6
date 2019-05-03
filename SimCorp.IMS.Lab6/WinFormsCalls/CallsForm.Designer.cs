@@ -55,6 +55,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.CallsViewList);
+            this.MaximizeBox = false;
             this.Name = "CallsForm";
             this.Text = "Calls";
             this.ResumeLayout(false);

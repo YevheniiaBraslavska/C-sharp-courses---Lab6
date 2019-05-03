@@ -49,12 +49,11 @@ namespace SimCorp.IMS.MobileLibrary {
         }
 
         public override bool Equals(object obj) {
-            try {
-                obj = (CallsGroup)obj;
-            } catch {
-                throw new ArgumentException("Objects to compare should be type CallsGroup.");
-            }
-            return ((CallsGroup)obj).Calls[0].Equals(Calls[0]);
+            return obj is CallsGroup && ((CallsGroup)obj).Calls[0].Equals(Calls[0]);
+        }
+
+        public override int GetHashCode() {
+            return base.GetHashCode();
         }
     }
 }

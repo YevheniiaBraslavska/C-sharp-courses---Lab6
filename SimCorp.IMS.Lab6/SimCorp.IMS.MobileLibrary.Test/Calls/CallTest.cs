@@ -15,7 +15,7 @@ namespace MobileLibrary.Test {
             calllist.Sort();
 
             Assert.AreEqual(new DateTime(2019, 1, 1), calllist[0].Time);
-            Assert.AreEqual(new DateTime(2018, 1, 1), calllist[0].Time);
+            Assert.AreEqual(new DateTime(2018, 1, 1), calllist[1].Time);
         }
 
         [TestMethod]

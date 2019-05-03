@@ -30,12 +30,11 @@ namespace SimCorp.IMS.MobileLibrary {
         }
 
         public override bool Equals(object obj) {
-            try {
-                obj = (Contact)obj;
-            } catch {
-                throw new ArgumentException("Objects to compare should be type Contact.");
-            }
-            return Name.Equals(((Contact)obj).Name);
+            return obj is Contact && Name.Equals(((Contact)obj).Name);
+        }
+
+        public override int GetHashCode() {
+            return base.GetHashCode();
         }
     }
 }

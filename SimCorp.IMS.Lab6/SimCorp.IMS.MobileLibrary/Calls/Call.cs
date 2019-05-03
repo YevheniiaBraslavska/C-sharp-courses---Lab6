@@ -31,12 +31,11 @@ namespace SimCorp.IMS.MobileLibrary {
         }
 
         public override bool Equals(object obj) {
-            try {
-                obj = (Call)obj;
-            } catch {
-                throw new ArgumentException("Objects to compare should be type Calls.");
-            }
-            return Contact.Equals(((Call)obj).Contact) && Direction.Equals(((Call)obj).Direction);
+            return obj is Call && Contact.Equals(((Call)obj).Contact) && Direction.Equals(((Call)obj).Direction);
+        }
+
+        public override int GetHashCode() {
+            return base.GetHashCode();
         }
     }
 }
